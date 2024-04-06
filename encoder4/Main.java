@@ -3,45 +3,44 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static List<Integer> fibonacciSequence(int n) {
-        List<Integer> sequence = new ArrayList<>();
-        sequence.add(0);
-        sequence.add(1);
-        while (sequence.size() < n) {
-            sequence.add(sequence.get(sequence.size() - 1) + sequence.get(sequence.size() - 2));
+    public static List<Integer> hghdbhbdhbhbhb(int n) {
+        List<Integer> ahhsdbhsbhsbfhsf = new ArrayList<>();
+        int snnfuabfbsdjfb = 2;
+
+        while (n > 1) {
+            while (n % snnfuabfbsdjfb == 0) {
+                ahhsdbhsbhsbfhsf.add(snnfuabfbsdjfb);
+                n /= snnfuabfbsdjfb;
+            }
+            snnfuabfbsdjfb++;
         }
-        return sequence;
+
+        return ahhsdbhsbhsbfhsf;
     }
 
-    public static String fibonacciEncoder(String text) {
-        String encodedText = "";
-        List<Integer> fibonacciNumbers = fibonacciSequence(text.length());
-        for (int i = 0; i < text.length(); i++) {
-            char character = text.charAt(i);
-            int encodedChar = (character + fibonacciNumbers.get(i)) % 128;
-            encodedText += (char) encodedChar;
+    public static void shdfiuwhfiuwr(List<Integer> arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.print(arr.get(i) + " ");
         }
-        return encodedText;
-    }
-
-    public static String fibonacciDecoder(String encodedText) {
-        String decodedText = "";
-        List<Integer> fibonacciNumbers = fibonacciSequence(encodedText.length());
-        for (int i = 0; i < encodedText.length(); i++) {
-            char character = encodedText.charAt(i);
-            int decodedChar = (character - fibonacciNumbers.get(i) + 128) % 128;
-            decodedText += (char) decodedChar;
-        }
-        return decodedText;
+        System.out.println();
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String text = scanner.nextLine();
-        String encodedText = fibonacciEncoder(text);
-        System.out.println("Encoded Text: " + encodedText);
-        String decodedText = fibonacciDecoder(encodedText);
-        System.out.println("Decoded Text: " + decodedText);
-        scanner.close();
+        String s = scanner.nextLine();
+        s = new StringBuilder(s).reverse().toString();
+        List<Integer> ans = new ArrayList<>();
+        int[] space = {2, 2, 2, 2, 2};
+        for (char c : s.toCharArray()) {
+            if (c == ' ') {
+                for (int i : space) {
+                    ans.add(i);
+                }
+            } else {
+                ans.addAll(hghdbhbdhbhbhb((int) c));
+            }
+        }
+        System.out.println(ans.size());
+        shdfiuwhfiuwr(ans);
     }
 }
