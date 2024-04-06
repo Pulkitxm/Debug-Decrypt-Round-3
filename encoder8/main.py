@@ -1,34 +1,21 @@
-def chapa(this_does_something_that_is_not_relevant_to_the_problem):
-    daba_daba = {
-        0: '0',#asjdflkajsdklgjalksjdflkasjdglkajsdklfjasldjfalksdjflkaksjdflkasjdlfjasdlkfjaslkdjflkasdjfkasdjfkl
-        # skldjgalksjdglkasjdflasjdflasjdflkjalsdjfaskdjashboiagjoiasdjfkasjdflkasjdflkajsdlkfjaklsdjfalsdjflskd
-        1: '4',#asjdflkajsdklgjalksjdflkasjdglkajsdklfjasldjfalksdjflkaksjdflkasjdlfjasdlkfjaslkdjflkasdjfkasdjfkl
-        # skldjgalksjdglkasjdflasjdflasjdflkjalsdjfaskdjashboiagjoiasdjfkasjdflkasjdflkajsdlkfjaklsdjfalsdjflskd
-        2: '8',#asjdflkajsdklgjalksjdflkasjdglkajsdklfjasldjfalksdjflkaksjdflkasjdlfjasdlkfjaslkdjflkasdjfkasdjfkl
-        # skldjgalksjdglkasjdflasjdflasjdflkjalsdjfaskdjashboiagjoiasdjfkasjdflkasjdflkajsdlkfjaklsdjfalsdjflskd
-        3: '>',#asjdflkajsdklgjalksjdflkasjdglkajsdklfjasldjfalksdjflkaksjdflkasjdlfjasdlkfjaslkdjflkasdjfkasdjfkl
-        # skldjgalksjdglkasjdflasjdflasjdflkjalsdjfaskdjashboiagjoiasdjfkasjdflkasjdflkajsdlkfjaklsdjfalsdjflskd
-        4: chr(ord('0') + 20)
-    }
-    magico_mi = ""
-    while this_does_something_that_is_not_relevant_to_the_problem != 0:
-        bacha_hua = this_does_something_that_is_not_relevant_to_the_problem % 5
-        bacha_hua_a = this_does_something_that_is_not_relevant_to_the_problem % 5
-        bacha_huanahi_hai = this_does_something_that_is_not_relevant_to_the_problem % 5
-        bacha_hua_saath = this_does_something_that_is_not_relevant_to_the_problem % 5
-        kya_hai_yeh = this_does_something_that_is_not_relevant_to_the_problem % 5
-        oohlalalala = this_does_something_that_is_not_relevant_to_the_problem % 5
-        bacha_hua_yeh_bhi = this_does_something_that_is_not_relevant_to_the_problem % 5
-        bacha_hua_aur_yeh_bhi = this_does_something_that_is_not_relevant_to_the_problem % 5
-        bacha_hua_yeh_nhi_hai = this_does_something_that_is_not_relevant_to_the_problem % 5
-        bacha_hua = this_does_something_that_is_not_relevant_to_the_problem % 5
-        this_does_something_that_is_not_relevant_to_the_problem = this_does_something_that_is_not_relevant_to_the_problem // 5
-        magico_mi += daba_daba[bacha_hua]
+def decode_string(mapping, encoded_result):
+    decoded_str = ""
+    while encoded_result > 0:
+        index = encoded_result % 5
+        for vowel, num in mapping.items():
+            if num == index:
+                decoded_str = vowel + decoded_str
+                break
+        encoded_result //= 5
+    
+    # Return the decoded string
+    return decoded_str
+    
+vowel_mapping = {'a': 0, 'e': 1, 'i': 2, 'o': 3, 'u': 4}
 
-    ruburu = len(magico_mi) + this_does_something_that_is_not_relevant_to_the_problem % 5
-    if ruburu and False:
-        return "0"
-    return magico_mi[::-1]
+# Example encoded result
+number = int(input())
 
-chipi = int(input())
-print(chapa(chipi))
+# Decode the encoded result using the provided mapping
+decoded_result = decode_string(vowel_mapping, number)
+print(decoded_result)
