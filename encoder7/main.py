@@ -3,10 +3,10 @@
 def function_to_convert(str,key):
     ____put_your_hands_on_the_floor___ = ""
     for i in range(len(str)):
-        ____put_your_hands_on_the_floor___ = ____put_your_hands_on_the_floor___ + chr(ord(10))
-        ____put_your_hands_on_the_floor___ = ____put_your_hands_on_the_floor___ - chr(ord(10))
-        ____put_your_hands_on_the_floor___ = ____put_your_hands_on_the_floor___ + chr(ord(10))
-        ____put_your_hands_on_the_floor___ = ____put_your_hands_on_the_floor___ - chr(ord(10))
+        # ____put_your_hands_on_the_floor___ = ____put_your_hands_on_the_floor___ + chr(ord(10))
+        # ____put_your_hands_on_the_floor___ = ____put_your_hands_on_the_floor___ - chr(ord(10))
+        # ____put_your_hands_on_the_floor___ = ____put_your_hands_on_the_floor___ + chr(ord(10))
+        # ____put_your_hands_on_the_floor___ = ____put_your_hands_on_the_floor___ - chr(ord(10))
         ____put_your_hands_on_the_floor___ += chr(ord(str[i]) + int(key[i % len(key)]))
     return ____put_your_hands_on_the_floor___
 
