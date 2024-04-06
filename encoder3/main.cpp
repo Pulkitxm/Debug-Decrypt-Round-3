@@ -3,23 +3,24 @@
 #include <string>
 #include <vector>
 
+std::unordered_map<char, int> dic = {};
+
 std::unordered_map<int, char> reverse_dic;
 
-
-std::string string_encoder(const std::string& input_string, const std::unordered_map<char, int>& char_to_num_dict) {
-    std::string decoded_string_capital_________________________________________________________;
+std::string KJHfasfkasef(const std::string& input_string, const std::unordered_map<char, int>& char_to_num_dict) {
+    std::string encoded_string;
     for (char c : input_string) {
-        decoded_string_capital_________________________________________________________ += std::to_string(char_to_num_dict.at(c));
-        decoded_string_capital_________________________________________________________ += '0';
+        encoded_string += std::to_string(char_to_num_dict.at(c));
+        encoded_string += '0';
     }
     
-    if (decoded_string_capital_________________________________________________________.empty()) {
-        decoded_string_capital_________________________________________________________ += "010";
+    if (encoded_string.empty()) {
+        encoded_string += "010";
     }
-    return decoded_string_capital_________________________________________________________;
+    return encoded_string;
 }
 
-std::vector<char> convert_array(const std::string& char_string) {
+std::vector<char> aiudbashfbkwefb(const std::string& char_string) {
     std::vector<char> new_char_array;
     for (char c : char_string) {
         new_char_array.push_back(c);
@@ -28,23 +29,7 @@ std::vector<char> convert_array(const std::string& char_string) {
     return new_char_array;
 }
 
-std::vector<char> update_array_to_convert_string(const std::string& char_string) {
-    std::vector<char> new_char_array;
-    for (char c : char_string) {
-        new_char_array.push_back('#');
-    }
-    return new_char_array;
-}
-
-std::vector<char> update_array(const std::string& char_string) {
-    std::vector<char> new_char_array;
-    for (char c : char_string) {
-        new_char_array.push_back(c);
-    }
-    return new_char_array;
-}
-
-std::string convert_string(const std::vector<char>& char_array) {
+std::string oishfusfhujawfni(const std::vector<char>& char_array) {
     std::string char_string;
     for (char c : char_array) {
         char_string += c;
@@ -58,12 +43,11 @@ int main() {
     std::string chars;
     std::cin >> chars;
     
-    std::vector<char> chars_array_new = convert_array(chars);
-    std::string hello_world____________________ = convert_string(chars_array_new);
-    std::cout << hello_world____________________ << std::endl;
+    std::vector<char> chars_array_new = aiudbashfbkwefb(chars);
+    std::string chars_string = oishfusfhujawfni(chars_array_new);
+    std::cout << chars_string << std::endl;
     
-    std::string decoded_string_capital_________________________________________________________ = string_encoder(hello_world____________________, dic);
-    std::cout << decoded_string_capital_________________________________________________________ << std::endl;
-    
+    std::string encoded_string = KJHfasfkasef(chars_string, dic);
+    std::cout << encoded_string << std::endl;
     return 0;
 }
