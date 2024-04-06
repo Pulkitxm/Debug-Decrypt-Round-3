@@ -1,39 +1,31 @@
 #include <iostream>
 #include <string>
 
-std::string encodeGronsfeldCipher(const std::string& plaintext, const std::string& key) {
-    std::string ciphertext;
-    int keyLength = key.length();
+using namespace std;
 
-    for (int i = 0; i < plaintext.length(); i++) {
-        char currentChar = plaintext[i];
-        int keyIndex = i % keyLength;
-        int keyDigit = key[keyIndex] - '0'; // Convert char to int
-
-        if (isalpha(currentChar)) {
-            char base = isupper(currentChar) ? 'A' : 'a';
-            currentChar = (currentChar - base + keyDigit) % 26 + base;
-        }
-
-        ciphertext += currentChar;
+string conversion(const string& str, const string& key) {
+    string result;
+    for (int i = 0; i < str.length(); i++) {
+        int shift = key[i % key.length()] - '0';
+        result.push_back(str[i] + shift);
     }
-
-    return ciphertext;
+    return result;
 }
 
 int main() {
-    std::string plaintext;
-    std::string key;
+    string message, key;
+    
+    cout << "Enter the message: ";
+    getline(cin, message);
 
-    std::cout << "Enter the plaintext: ";
-    std::getline(std::cin, plaintext);
+    cout << "Enter the key: ";
+    getline(cin, key);
 
-    std::cout << "Enter the key: ";
-    std::getline(std::cin, key);
+    string text = conversion(message, key);
+    string op = conversion(text, key);
+    string result = conversion(message, key);
 
-    std::string ciphertext = encodeGronsfeldCipher(plaintext, key);
-
-    std::cout << "Ciphertext: " << ciphertext << std::endl;
+    cout << result << endl;
 
     return 0;
 }
