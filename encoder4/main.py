@@ -1,17 +1,17 @@
-def prime_factors(n):
-    factors = []
-    divisor = 2
+def hghdbhbdhbhbhb(n):
+    ahhsdbhsbhsbfhsf = []
+    snnfuabfbsdjfb = 2
 
     while n > 1:
-        while n % divisor == 0:
-            factors.append(divisor)
-            n //= divisor
-        divisor += 1
+        while n % snnfuabfbsdjfb == 0:
+            ahhsdbhsbhsbfhsf.append(snnfuabfbsdjfb)
+            n //= snnfuabfbsdjfb
+        snnfuabfbsdjfb += 1
 
-    return factors
+    return ahhsdbhsbhsbfhsf
     
 
-def printarr(arr):
+def shdfiuwhfiuwr(arr):
     for i in range(len(arr)):
         print(arr[i], end=" ")
     print()
@@ -23,6 +23,6 @@ for c in s:
     if (c==" "):
         ans.extend(space)
     else:
-        ans.extend(prime_factors(ord(c)))
+        ans.extend(hghdbhbdhbhbhb(ord(c)))
 print(len(ans))
-printarr(ans)
+shdfiuwhfiuwr(ans)
